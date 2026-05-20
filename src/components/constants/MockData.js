@@ -11,68 +11,109 @@ export const cats = [
   { img: iphone, name: "Mobile Phones", count: "36 Items" },
 ];
 
-// ── PRODUCT CARD ──
+// ── PRODUCT CARD (ĐÃ BỔ SUNG ĐẦY ĐỦ CATEGORY, TAGS, BRAND, PRICENUM) ──
 export const products = [
   {
+    id: 1,
     name: "iPhone 17 Pro Max 256GB",
     price: "37.990.000đ",
     old: "42.990.000đ",
-    image: "/ip17.png", // Tên file bạn cần đổi trong public
+    image: "/ip17.png",
     badge: "Sale",
     bg: "#fff5f0",
+    category: "iPhone", // 🌟 Thêm danh mục cụ thể
+    brand: "Apple", // 🌟 Thêm thương hiệu để phục vụ bộ lọc Brand
+    tags: ["Sale", "Popular"], // 🌟 Thêm mảng tags để khớp với logic p.tags?.includes()
+    priceNum: 37990000, // 🌟 Thêm số nguyên để bộ lọc khoảng giá và sort chạy mượt
   },
   {
+    id: 2,
     name: "iPhone 16 Pro Max",
     price: "32.990.000đ",
     image: "/ip16.png",
     badge: null,
     bg: "#f5f5ff",
+    category: "iPhone",
+    brand: "Apple",
+    tags: ["Popular"],
+    priceNum: 32990000,
   },
   {
+    id: 3,
     name: "AirPods Pro",
     price: "6.790.000đ",
     image: "/airportpro.png",
     badge: null,
     bg: "#f0f8ff",
+    category: "AirPods",
+    brand: "Apple",
+    tags: ["New"],
+    priceNum: 6790000,
   },
   {
+    id: 4,
     name: "iPhone 15 Plus",
     price: "17.990.000đ",
     image: "/ip15pls.png",
     badge: null,
     bg: "#f5f5f5",
+    category: "iPhone",
+    brand: "Apple",
+    tags: [],
+    priceNum: 17990000,
   },
   {
+    id: 5,
     name: "Apple MacBook Pro",
     price: "41.990.000đ",
     old: "46.990.000đ",
     image: "/macpro.png",
     badge: "New",
     bg: "#f9f9f9",
+    category: "MacBook",
+    brand: "Apple",
+    tags: ["New"],
+    priceNum: 41990000,
   },
   {
+    id: 6,
     name: "Laptop Lenovo IdeaPad Slim 5",
     price: "14.990.000đ",
     image: "/laptop.png",
     badge: "Sale",
     bg: "#fff8f0",
+    category: "Laptop",
+    brand: "Lenovo",
+    tags: ["Sale"],
+    priceNum: 14990000,
   },
   {
+    id: 7,
     name: "Chuột Gaming Razer Basilisk V3 Pro",
     price: "3.190.000đ",
     image: "/basilok.png",
     badge: null,
     bg: "#fff0f5",
+    category: "Accessories",
+    brand: "Razer",
+    tags: ["Popular"],
+    priceNum: 3190000,
   },
   {
+    id: 8,
     name: "Amazfit T-Rex 3 Pro 46mm",
     price: "4.690.000đ",
     old: "5.290.000đ",
     image: "/rex3pro.png",
     badge: null,
     bg: "#f5f0ea",
+    category: "Smartwatch",
+    brand: "Amazfit",
+    tags: [],
+    priceNum: 4690000,
   },
 ];
+
 // ── REVIEWS ──
 export const reviews = [
   {
@@ -112,7 +153,6 @@ export const posts = [
     title: "Best Digital Watches To Buy In This Year",
     date: "May 12, 2024",
     image: "lt-watch.png",
-
     bg: "#f0f0f0",
   },
   {
@@ -120,7 +160,6 @@ export const posts = [
     title: "How To Use Gimbal To Take Video",
     date: "May 5, 2024",
     image: "lt-gimbal.png",
-
     bg: "#2a2a2a",
   },
 ];
@@ -148,8 +187,6 @@ export const features = [
     desc: "Nam ulputat dolor, at ut amet consectetur adipiscing convallis sit.",
   },
 ];
-
-// ── NEWSLETTER ──
 
 // ── SHOP INSTA ──
 export const instaIcons = [

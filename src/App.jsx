@@ -15,6 +15,10 @@ import TopBar from "./components/layout/TopBar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
+import OrderSuccess from "./pages/OrderSuccess";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <>
@@ -36,7 +40,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/order-success" element={<OrderSuccess />} />
         </Routes>
+        <ToastContainer position="top-right" autoClose={2000} />
       </BrowserRouter>
     </>
   );

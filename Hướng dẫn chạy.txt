@@ -1,0 +1,46 @@
+========================================================================
+                 HƯỚNG DẪN KHỞI CHẠY ĐỒ ÁN WEBSITE BÁN HÀNG
+========================================================================
+
+Đồ án gồm 3 phần chính:
+- Database: SQL Server
+- Backend: Node.js (Express)
+- Frontend: React.js (Vite)
+
+------------------------------------------------------------------------
+BƯỚC 1: KHÔI PHỤC DATABASE (SQL SERVER MANAGEMENT STUDIO - SSMS)
+------------------------------------------------------------------------
+1. Mở SSMS lên và kết nối vào Server của bạn.
+2. Click chuột phải vào mục "Databases" -> Chọn "New Database...".
+3. Đặt tên chính xác cho Database là: StoreManagementDB
+4. Vào menu File -> Open -> File... -> Chọn đến file `DataBase.sql` có sẵn trong thư mục đồ án này.
+5. Nhấn nút "Execute" (hoặc phím F5) để nạp toàn bộ cấu trúc bảng và dữ liệu mẫu.
+
+------------------------------------------------------------------------
+BƯỚC 2: CẤU HÌNH VÀ CHẠY BACKEND (NODE.JS)
+------------------------------------------------------------------------
+1. Mở thư mục dự án bằng VS Code.
+2. Mở file `Backend/server.js`, tìm đến đoạn cấu hình `dbConfig` và chỉnh sửa lại thông tin kết nối SQL Server cho khớp với máy của bạn:
+   - 'server': Đổi thành tên Server Name SQL của bạn (Ví dụ: 'localhost' hoặc 'localhost\\SQLEXPRESS').
+   - Nếu dùng quyền Windows Authentication thì giữ nguyên cài đặt, nếu dùng tài khoản 'sa' thì điền 'user' và 'password' tương ứng.
+3. Mở một Terminal mới tại thư mục `Backend`, gõ các lệnh sau để cài đặt thư viện và chạy:
+   cd Backend
+   npm install
+   node server.js
+4. Nếu Terminal hiện "Server đang chạy ở cổng 5000..." và "Kết nối Database thành công!" là OK.
+
+------------------------------------------------------------------------
+BƯỚC 3: CẤU HÌNH VÀ CHẠY FRONTEND (REACTJS + VITE)
+------------------------------------------------------------------------
+1. Mở thêm một ô Terminal mới (hoặc tab Terminal mới) trong VS Code.
+2. Di chuyển vào thư mục `Frontend` và gõ các lệnh sau:
+   cd Frontend
+   npm install
+   npm run dev
+3. Terminal sẽ cung cấp một đường link Localhost (thường là http://localhost:5173).
+4. Giữ phím Ctrl và click chuột vào link đó để mở giao diện website trên trình duyệt.
+
+------------------------------------------------------------------------
+* LƯU Ý KHI TEST CHỨC NĂNG ĐẶT HÀNG:
+Luồng thanh toán và chốt đơn đã được tối ưu hóa đồng bộ trực tiếp với các bảng [Invoice] và [Invoice_Detail] trong database. Hãy đảm bảo giỏ hàng có sản phẩm trước khi nhấn "Place an order".
+========================================================================
